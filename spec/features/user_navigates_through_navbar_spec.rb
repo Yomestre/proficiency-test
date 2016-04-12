@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 feature 'User navigates through navbar' do
+  it 'Navigates to root_path' do
+    visit students_path
+    within('nav') do
+      click_on 'ProficiencyTest'
+    end
+    expect(current_path).to eq(root_path)
+    expect(page).to have_css :h1, text: 'Bem-vindo'
+  end
   it 'Navigates to new student' do
     visit root_path
     within('.nav') do
