@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Nova matricula</h1>
+  <%= simple_form_for @classroom do |f| %>
+    <%= f.association :student, label: 'Aluno' %>
+    <%= f.association :course, label: 'Curso' %>
+    <%= f.button :submit, 'Cadastrar Matricula' %>
+  <% end %>
+</div>

@@ -8,7 +8,6 @@ feature 'User creates a course' do
     fill_in 'Descrição', with: course.description
     fill_in 'Status', with: course.status
     click_on 'Cadastrar Curso'
-    expect(page).to have_content('Curso criado com sucesso')
     expect(page).to have_content(course.name)
     expect(page).to have_content(course.description)
     expect(page).to have_content(course.status)
@@ -17,6 +16,6 @@ feature 'User creates a course' do
   it 'Should render new and errors when invalid data' do
     visit new_course_path
     click_on 'Cadastrar Curso'
-    expect(page).not_to have_content('Curso criado com sucesso')
+    expect(page).to have_content('Nome não pode estar em branco')
   end
 end

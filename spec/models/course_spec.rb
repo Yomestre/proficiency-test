@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 describe Course do
+  it { is_expected.to have_many :classrooms }
+
   it do
     is_expected.to validate_presence_of(:name)
       .with_message('Nome não pode estar em branco')
