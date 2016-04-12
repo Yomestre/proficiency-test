@@ -1,10 +1,10 @@
-<div class="container">
+<div class="page-header">
   <h1>Novo aluno</h1>
-  <br>
-  <%= simple_form_for @student do |f| %>
-    <%= f.input :name, label: 'Nome' %>
-    <%= f.input :register_number, label: 'Numero de registro' %>
-    <%= f.input :status %>
-    <%= f.button :submit, 'Cadastrar Aluno' %>
-  <% end %>
 </div>
+<br>
+<%= simple_form_for @student do |f| %>
+  <%= f.input :name, label: 'Nome' , input_html: { required: 'required'} %>
+  <%= f.input :register_number, label: 'Numero de registro' %>
+  <%= f.input :status %>
+  <%= f.button :submit, 'Cadastrar Aluno' %>
+<% end %>

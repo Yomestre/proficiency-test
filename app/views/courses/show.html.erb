@@ -1,19 +1,19 @@
-<div class="container">
-  <div class="row">
-    <% if flash[:notice] %>
-      <div class="notice bg-success"><%= flash[:notice] %></div>
-    <% end %>
+<div class="row">
+  <% if flash[:notice] %>
+    <div class="notice bg-success"><%= flash[:notice] %></div>
+  <% end %>
+  <div class="page-header">
     <h1>Informações sobre o curso</h1>
-    <div class="course">
-      <%= render partial: 'course', locals: { course: @course } %>
-    </div>
-    <br>
-    <h2>Matriculas</h2>
-    <% @course.classrooms.each do |classroom| %>
-      <div class="classroom col-md-6">
-        <p><strong>Nome: </strong><%= classroom.student.name %></p>
-        <p><strong>Data de ingresso: </strong><%= classroom.created_at %></p>
-      </div>
-    <% end %>
   </div>
+  <div class="course">
+    <%= render partial: 'course', locals: { course: @course } %>
+  </div>
+  <br>
+  <h2>Matriculas</h2>
+  <% @course.classrooms.each do |classroom| %>
+    <div class="classroom col-md-6">
+      <p><strong>Nome: </strong><%= classroom.student.name %></p>
+      <p><strong>Data de ingresso: </strong><%= classroom.created_at %></p>
+    </div>
+  <% end %>
 </div>
