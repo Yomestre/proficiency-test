@@ -1,6 +1,8 @@
-<%= simple_form_for @student do |f| %>
-  <%= f.input :name, label: 'Nome' %>
-  <%= f.input :register_number, label: 'Numero de registro' %>
-  <%= f.input :status %>
-  <%= f.button :submit, 'Cadastrar Aluno' %>
-<% end %>
+<div class="container">
+  <%= simple_form_for @student do |f| %>
+    <%= f.input :name, label: 'Nome' %>
+    <%= f.input :register_number, label: 'Numero de registro' %>
+    <%= f.input :status %>
+    <%= f.button :submit, 'Cadastrar Aluno' %>
+  <% end %>
+</div>
