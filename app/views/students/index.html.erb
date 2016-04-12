@@ -1,0 +1,14 @@
+<div class="container">
+<div class="row">
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<% @students.each do |student| %>
+  <div class="student col-md-6">
+    <p><strong>Name: </strong><%= student.name %></p>
+    <p><strong>Numero de registro: </strong><%= student.register_number %></p>
+    <p><strong>Status: </strong><%= student.status %></p>
+  </div>
+<% end %>
+</div>
+</div>
